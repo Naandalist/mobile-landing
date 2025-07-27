@@ -1,8 +1,8 @@
 import type { IconType } from "react-icons";
 
 export interface DeviceScreenshots {
-	iphone: string[];
-	ipad: string[];
+	android: string[];
+	desktop: string[];
 }
 
 export interface Feature {
@@ -81,8 +81,8 @@ export interface BreadcrumbsProps {
 }
 
 export interface DeviceToggleProps {
-	activeDevice: "iphone" | "ipad";
-	onToggle: (device: "iphone" | "ipad") => void;
+	activeDevice: "android" | "desktop";
+	onToggle: (device: "android" | "desktop") => void;
 }
 
 export interface GithubCornerProps {
@@ -102,7 +102,7 @@ export function areImagesEqual<T extends WithImages>(
 	nextProps: T,
 ): boolean {
 	return (
-		prevProps.images.iphone === nextProps.images.iphone &&
-		prevProps.images.ipad === nextProps.images.ipad
+		prevProps.images.android === nextProps.images.android &&
+		prevProps.images.desktop === nextProps.images.desktop
 	);
 }

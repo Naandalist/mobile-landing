@@ -5,7 +5,7 @@ import { areImagesEqual } from "config";
 import DeviceToggle from "../ui/DeviceToggle";
 
 const Screenshots = ({ images }: ScreenshotsProps) => {
-	const [activeDevice, setActiveDevice] = useState<"iphone" | "ipad">("iphone");
+	const [activeDevice, setActiveDevice] = useState<"android" | "desktop">("android");
 	const currentImages = images[activeDevice];
 
 	return (
@@ -15,7 +15,7 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 				<DeviceToggle activeDevice={activeDevice} onToggle={setActiveDevice} />
 			</div>
 			<div
-				className={`relative overflow-hidden ${activeDevice === "iphone" ? "min-h-[400px]" : "min-h-[300px]"}`}
+			className={`relative overflow-hidden ${activeDevice === "android" ? "min-h-[400px]" : "min-h-[300px]"}`}
 			>
 				<AnimatePresence mode="wait">
 					<motion.div
@@ -57,7 +57,7 @@ const Screenshots = ({ images }: ScreenshotsProps) => {
 										src={image}
 										alt={`Screenshot ${index + 1}`}
 										className={`rounded-xl border border-white/10 object-cover ${
-											activeDevice === "iphone"
+											activeDevice === "android"
 												? "aspect-[9/16] w-[260px]"
 												: "aspect-[4/3] w-[360px]"
 										}`}

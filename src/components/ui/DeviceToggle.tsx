@@ -3,20 +3,20 @@ import { memo, useCallback } from "react";
 import type { DeviceToggleProps } from "config";
 
 const DeviceToggle = ({ activeDevice, onToggle }: DeviceToggleProps) => {
-	const handleIphoneToggle = useCallback(() => onToggle("iphone"), [onToggle]);
-	const handleIpadToggle = useCallback(() => onToggle("ipad"), [onToggle]);
+	const handleAndroidToggle = useCallback(() => onToggle("android"), [onToggle]);
+	const handleDesktopToggle = useCallback(() => onToggle("desktop"), [onToggle]);
 
 	return (
 		<div className="flex items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] p-1">
 			<DeviceButton
-				isActive={activeDevice === "iphone"}
-				onClick={handleIphoneToggle}
-				label="iPhone"
+				isActive={activeDevice === "android"}
+				onClick={handleAndroidToggle}
+				label="Android"
 			/>
 			<DeviceButton
-				isActive={activeDevice === "ipad"}
-				onClick={handleIpadToggle}
-				label="iPad"
+				isActive={activeDevice === "desktop"}
+				onClick={handleDesktopToggle}
+				label="Desktop"
 			/>
 		</div>
 	);

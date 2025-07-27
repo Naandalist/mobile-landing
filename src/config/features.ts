@@ -1,20 +1,22 @@
-import { FiBox, FiStar, FiZap } from "react-icons/fi";
+import { FiMessageCircle, FiTrendingUp, FiShield } from "react-icons/fi";
 import type { Feature } from "./types";
 
 export const features: Feature[] = [
 	{
-		title: "Main Feature",
-		description: "Describe your main feature here. What makes it special?",
-		icon: FiStar,
+		title: "Interaktif",
+		description: "Skenario realistis untuk mengasah keputusan mendidik anak.",
+		icon: FiMessageCircle,
 	},
 	{
-		title: "Another Feature",
-		description: "What else can your app do? Tell users about it here.",
-		icon: FiZap,
+		title: "Analitis",
+		description: "Analisis konsekuensi jangka pendek dan panjang dengan nilai Islam.",
+		icon: FiTrendingUp,
 	},
 	{
-		title: "One More Feature",
-		description: "Add another key feature of your application here.",
-		icon: FiBox,
+		title: "Privasi Aman",
+		description: "Tanpa pengumpulan data pribadi. Semua progress tersimpan lokal.",
+		icon: FiShield,
 	},
 ];
+
+
