@@ -3,7 +3,7 @@ import type { FAQ } from "./types";
 export const faq: FAQ[] = [
 	{
 		question: "Apa itu aplikasi Kuiskuensi?",
-		answer: "Kuiskuensi adalah aplikasi yang terinspirasi Duolingo dengan tema pendidikan anak Islami yang dirancang khusus untuk membantu para ibu muslim mengasah keterampilan pengambilan keputusan bijak dalam mendidik buah hati. Aplikasi ini menyajikan berbagai skenario kehidupan sehari-hari dalam bentuk kuis interaktif dengan analisis konsekuensi dari setiap pilihan.",
+		answer: "Bagi para ibu Muslim yang ingin mengasah keterampilan pengambilan keputusan dalam mengasuh anak, Konsekuensi menawarkan solusi unik. Aplikasi yang terinspirasi Duolingo ini memadukan tema pendidikan Islami dengan kuis interaktif berbasis situasi sehari-hari, memungkinkan para ibu menjelajahi konsekuensi dari berbagai pilihan dan mengembangkan pendekatan bijak dalam mendidik anak.",
 	},
 	{
 		question: "Apa saja kategori pembelajaran yang tersedia di aplikasi ini?",
