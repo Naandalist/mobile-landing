@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { FaGooglePlay, FaGoogleDrive } from "react-icons/fa";
+import { FaGooglePlay, FaStore } from "react-icons/fa";
 import type { AppHeroProps, StoreButtonProps } from "config";
 
 const AppHero = ({ title, description, storeLinks, logo }: AppHeroProps) => {
@@ -36,7 +36,7 @@ const AppHero = ({ title, description, storeLinks, logo }: AppHeroProps) => {
 						store="apple"
 						href={storeLinks.apple}
 						label="Download from"
-						storeName="Google Drive"
+						storeName="AppGallery"
 					/>
 					<StoreButton
 						store="google"
@@ -52,7 +52,7 @@ const AppHero = ({ title, description, storeLinks, logo }: AppHeroProps) => {
 
 const StoreButton = memo(
 	({ store, href, label, storeName }: StoreButtonProps) => {
-		const Icon = store === "apple" ? FaGoogleDrive : FaGooglePlay;
+		const Icon = store === "apple" ? FaStore : FaGooglePlay;
 
 		return (
 			<a

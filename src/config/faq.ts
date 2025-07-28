@@ -3,15 +3,7 @@ import type { FAQ } from "./types";
 export const faq: FAQ[] = [
 	{
 		question: "Apa itu aplikasi Kuiskuensi?",
-		answer: "Bagi para ibu Muslim yang ingin mengasah keterampilan pengambilan keputusan dalam mengasuh anak, Konsekuensi menawarkan solusi unik. Aplikasi yang terinspirasi Duolingo ini memadukan tema pendidikan Islami dengan kuis interaktif berbasis situasi sehari-hari, memungkinkan para ibu menjelajahi konsekuensi dari berbagai pilihan dan mengembangkan pendekatan bijak dalam mendidik anak.",
-	},
-	{
-		question: "Apa saja kategori pembelajaran yang tersedia di aplikasi ini?",
-		answer: "Aplikasi ini memiliki 5 kategori pembelajaran komprehensif: (1) Akhlak & Adab - mengajarkan nilai-nilai akhlak mulia dan adab Islami, (2) Ibadah - mengenalkan tata cara ibadah yang benar sejak dini, (3) Pola Asuh - strategi mendidik anak sesuai tuntunan Islam, (4) Sosial & Emosi - mengembangkan kecerdasan emosional dan sosial anak, dan (5) Kemandirian - melatih anak menjadi mandiri dan bertanggung jawab.",
-	},
-	{
-		question: "Bagaimana sistem kuis dalam aplikasi bekerja?",
-		answer: "Setiap kuis berisi beberapa pertanyaan per kategori yang menyajikan skenario realistis dalam pengasuhan anak. Pengguna akan diberikan pilihan 'ya' atau 'tidak' untuk setiap situasi, dan aplikasi akan menampilkan konsekuensi jangka pendek dan jangka panjang dari setiap pilihan yang diambil, membantu memahami dampak keputusan parenting.",
+		answer: "Bagi para ibu Muslim yang ingin mengasah keterampilan pengambilan keputusan dalam mengasuh anak, Konsekuensi menawarkan solusi unik. Aplikasi yang terinspirasi Duolingo ini memadukan tema pendidikan Islami dengan kuis interaktif berbasis situasi sehari-hari"
 	},
 	{
 		question: "Apakah aplikasi ini mengumpulkan data pribadi pengguna?",
@@ -24,10 +16,6 @@ export const faq: FAQ[] = [
 	{
 		question: "Apakah konten dalam aplikasi ini dapat menggantikan konsultasi dengan ahli?",
 		answer: "Tidak, aplikasi ini bersifat edukatif dan tidak menggantikan konsultasi profesional dengan ahli psikologi anak, dokter, atau konselor keluarga. Hasil analisis aplikasi hanya sebagai bahan pertimbangan tambahan, dan keputusan akhir dalam mendidik anak tetap berada di tangan orang tua.",
-	},
-	{
-		question: "Bagaimana jika data saya hilang atau perangkat rusak?",
-		answer: "Karena semua data disimpan secara lokal di perangkat, keamanan dan backup data menjadi tanggung jawab pengguna. Data akan hilang jika aplikasi dihapus atau perangkat direset. Aplikasi tidak menyediakan layanan backup cloud karena tidak mengumpulkan atau menyimpan data pengguna di server.",
 	},
 	{
 		question: "Siapa target pengguna aplikasi Kuiskuensi?",

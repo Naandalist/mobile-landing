@@ -17,7 +17,14 @@ const Footer: React.FC = () => {
 			<div className="text-sm text-gray-500">
 				<p>
 					&copy; {new Date().getFullYear()}{" "}
-					<span className="text-gray-400">{siteConfig.title}</span>
+					<a 
+						href="https://www.naandalist.com/" 
+						target="_blank" 
+						rel="noopener noreferrer"
+						className="text-gray-400 hover:text-white transition-colors"
+					>
+						Naandalist
+					</a>
 					<br />
 					All rights reserved.
 				</p>

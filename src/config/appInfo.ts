@@ -10,6 +10,6 @@ export const appInfo = {
 	},
 	storeLinks: {
 		apple: "#",
-		google: "#",
+		google: "https://play.google.com/store/apps/details?id=com.naandalist.kuiskuensi",
 	} as StoreLinks,
 };
