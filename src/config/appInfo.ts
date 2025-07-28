@@ -3,7 +3,7 @@ import type { AppLogo, StoreLinks } from "./types";
 export const appInfo = {
 	title: "Kuiskuensi",
 	description:
-		"Asah Pertimbangan Bijak Ibu Salihah untuk Mendidik Buah Hati",
+		"Aplikasi gamifikasi Duolingo-style untuk membantu ibu dan calon ibu salehah mengasah kebijaksanaan dalam mengasuh dan mendidik buah hati.",
 	logo: {
 		type: "image" as AppLogo["type"],
 		src: "favicon.webp",
