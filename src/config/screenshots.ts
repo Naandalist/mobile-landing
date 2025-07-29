@@ -2,13 +2,12 @@ import type { DeviceScreenshots } from "./types";
 
 export const screenshots: DeviceScreenshots = {
 	android: [
-		"screenshots/iphone/0.png",
-		"screenshots/iphone/1.png",
-		"screenshots/iphone/2.png",
-		"screenshots/iphone/3.png",
+		"screenshots/android/01.png",
+		"screenshots/android/02.png",
+		"screenshots/android/03.png",
 	],
 	desktop: [
-		"screenshots/ipad/1.png",
-		"screenshots/ipad/2.png",
+		"screenshots/desktop/1.png",
+		"screenshots/desktop/2.png",
 	],
 };

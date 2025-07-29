@@ -14,15 +14,20 @@ const privacyContent = Object.values(privacyModules)[0] as {
 const htmlContent = marked(privacyContent.rawContent());
 
 const { title } = siteConfig;
+
+// Check for light mode URL parameter
+const url = new URL(Astro.request.url);
+const mode = url.searchParams.get('mode');
+const isLightMode = mode === 'light';
 ---
 
-<Layout title={`${title} · Privacy Policy`} description={`Privacy Policy for ${title} application - How we handle and protect your data`}>
+<Layout title={`${title} · Privacy Policy`} description={`Privacy Policy for ${title} application - How we handle and protect your data`} theme={isLightMode ? 'light' : 'dark'}>
   <main class="min-h-screen max-w-3xl mx-auto px-4 py-8">
     <Breadcrumbs 
       items={[{ label: "Privacy Policy" }]}
     />
     
-    <div class="prose prose-invert prose-sm sm:prose-base max-w-none">
+    <div class={`prose prose-sm sm:prose-base max-w-none ${isLightMode ? 'prose-slate' : 'prose-invert'}`}>
       <div set:html={htmlContent} />
     </div>
   </main>
@@ -30,11 +35,41 @@ const { title } = siteConfig;
   <BackToTop client:load />
 </Layout>
 
-<style is:global>
-  .prose {
+<script define:vars={{ isLightMode }}>
+  // Add theme toggle functionality
+  function toggleTheme() {
+    const url = new URL(window.location);
+    if (isLightMode) {
+      url.searchParams.delete('mode');
+    } else {
+      url.searchParams.set('mode', 'light');
+    }
+    window.location.href = url.toString();
+  }
+  
+  // Optional: Add keyboard shortcut for theme toggle (Ctrl/Cmd + T)
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+      e.preventDefault();
+      toggleTheme();
+    }
+  });
+</script>
+
+<style is:global define:vars={{ isLight: isLightMode }}>
+  /* Dark mode styles */
+  .prose-invert {
     --tw-prose-invert-headings: theme(colors.white);
     --tw-prose-invert-links: theme(colors.blue.400);
     --tw-prose-invert-bold: theme(colors.white);
+  }
+  
+  /* Light mode styles */
+  .prose-slate {
+    --tw-prose-headings: theme(colors.slate.900);
+    --tw-prose-links: theme(colors.blue.600);
+    --tw-prose-bold: theme(colors.slate.900);
+    --tw-prose-body: theme(colors.slate.700);
   }
   
   .prose a {

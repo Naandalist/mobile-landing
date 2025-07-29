@@ -10,15 +10,20 @@ const termsContent = Object.values(termsModules)[0] as { rawContent(): string };
 const htmlContent = marked(termsContent.rawContent());
 
 const { title } = siteConfig;
+
+// Check for light mode URL parameter
+const url = new URL(Astro.request.url);
+const mode = url.searchParams.get('mode');
+const isLightMode = mode === 'light';
 ---
 
-<Layout title={`${title} · Terms of Service`} description={`Terms of Service for ${title} application - Rules and guidelines for using our service`}>
+<Layout title={`${title} · Terms of Service`} description={`Terms of Service for ${title} application - Rules and guidelines for using our service`} theme={isLightMode ? 'light' : 'dark'}>
   <main class="min-h-screen max-w-3xl mx-auto px-4 py-8">
     <Breadcrumbs 
       items={[{ label: "Terms of Service" }]}
     />
     
-    <div class="prose prose-invert prose-sm sm:prose-base max-w-none">
+    <div class={`prose prose-sm sm:prose-base max-w-none ${isLightMode ? 'prose-slate' : 'prose-invert'}`}>
       <div set:html={htmlContent} />
     </div>
   </main>
@@ -26,18 +31,48 @@ const { title } = siteConfig;
   <BackToTop client:load />
 </Layout>
 
-<style is:global>
-    .prose {
-      --tw-prose-invert-headings: theme(colors.white);
-      --tw-prose-invert-links: theme(colors.blue.400);
-      --tw-prose-invert-bold: theme(colors.white);
+<script define:vars={{ isLightMode }}>
+  // Add theme toggle functionality
+  function toggleTheme() {
+    const url = new URL(window.location);
+    if (isLightMode) {
+      url.searchParams.delete('mode');
+    } else {
+      url.searchParams.set('mode', 'light');
     }
-    
-    .prose a {
-      text-decoration: none;
+    window.location.href = url.toString();
+  }
+  
+  // Optional: Add keyboard shortcut for theme toggle (Ctrl/Cmd + T)
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+      e.preventDefault();
+      toggleTheme();
     }
-    
-    .prose a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  });
+</script>
+
+<style is:global define:vars={{ isLight: isLightMode }}>
+  /* Dark mode styles */
+  .prose-invert {
+    --tw-prose-invert-headings: theme(colors.white);
+    --tw-prose-invert-links: theme(colors.blue.400);
+    --tw-prose-invert-bold: theme(colors.white);
+  }
+  
+  /* Light mode styles */
+  .prose-slate {
+    --tw-prose-headings: theme(colors.slate.900);
+    --tw-prose-links: theme(colors.blue.600);
+    --tw-prose-bold: theme(colors.slate.900);
+    --tw-prose-body: theme(colors.slate.700);
+  }
+  
+  .prose a {
+    text-decoration: none;
+  }
+  
+  .prose a:hover {
+    text-decoration: underline;
+  }
+</style>

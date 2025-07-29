@@ -5,10 +5,11 @@ export interface Props {
 	title: string;
 	description?: string;
 	showFooter?: boolean;
+	theme?: 'light' | 'dark';
 }
 
 const { title, description } = Astro.props;
-const { showFooter = true } = Astro.props;
+const { showFooter = true, theme = 'dark' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -56,7 +57,7 @@ const { showFooter = true } = Astro.props;
       });
     </script>
   </head>
-  <body class="bg-black font-sans text-white">
+  <body class={theme === 'light' ? 'bg-white font-sans text-black' : 'bg-black font-sans text-white'}>
     <div class="mx-auto min-h-screen max-w-[800px]">
       <PageAnimation client:load>
         <main>
